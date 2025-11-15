@@ -9,7 +9,7 @@ from email.mime.multipart import MIMEMultipart
 # CONFIGURACIÓN - EDITA ESTOS VALORES
 # ============================================================
 SENDER_EMAIL = "miguellucerogatica@gmail.com"
-SENDER_PASSWORD = ""  # Pega aquí tu contraseña de Gmail o App Password
+SENDER_PASSWORD = "Marzo2026"  # Pega aquí tu contraseña de Gmail o App Password
 RECIPIENT_EMAIL = "miguellucerogatica@gmail.com"
 
 # ============================================================
@@ -92,6 +92,8 @@ except smtplib.SMTPAuthenticationError as e:
     print("[ERROR] Error de autenticacion SMTP")
     print("=" * 70)
     print()
+    print(f"Detalle del error: {e}")
+    print()
     print("Posibles causas:")
     print("1. La contrasena es incorrecta")
     print("2. La verificacion en dos pasos esta activada")
@@ -99,11 +101,26 @@ except smtplib.SMTPAuthenticationError as e:
     print("   -> Ve a: https://myaccount.google.com/apppasswords")
     print("3. Google bloqueo el acceso desde aplicaciones menos seguras")
     print()
-    print("Soluciones:")
-    print("1. Si tienes verificacion en dos pasos, crea App Password:")
-    print("   https://myaccount.google.com/apppasswords")
-    print("2. O desactiva temporalmente la verificacion en dos pasos")
-    print("   (solo para pruebas, NO recomendado para produccion)")
+    print("SOLUCIONES RAPIDAS:")
+    print("=" * 70)
+    print()
+    print("OPCION A: Desactivar verificacion en dos pasos TEMPORALMENTE")
+    print("   1. Ve a: https://myaccount.google.com/security")
+    print("   2. Desactiva 'Verificacion en dos pasos'")
+    print("   3. Prueba este script nuevamente")
+    print("   4. IMPORTANTE: Vuelve a activar la verificacion luego")
+    print()
+    print("OPCION B: Usar el sistema SIN emails (solo guarda en BD)")
+    print("   - Configura: ENABLE_EMAILS=false")
+    print("   - Las consultas se guardaran en consultas.db")
+    print("   - Puedes verlas con: python ver_consultas.py")
+    print()
+    print("OPCION C: Crear App Password (si puedes)")
+    print("   1. Ve a: https://myaccount.google.com/apppasswords")
+    print("   2. Selecciona: App > Correo, Dispositivo > Otro")
+    print("   3. Copia la contraseña de 16 caracteres")
+    print("   4. Usa esa contraseña en SENDER_PASSWORD")
+    print()
     print("=" * 70)
     exit(1)
     
