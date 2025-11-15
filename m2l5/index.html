@@ -1,0 +1,111 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Marca Personal - Miguel Lucero</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #e0f7fa 0%, #f3e5f5 100%);
+            color: #1f2933;
+            min-height: 100vh;
+            padding: clamp(20px, 5vw, 48px);
+        }
+
+        .dashboard-wrapper { display: grid; gap: clamp(24px, 5vw, 36px); }
+        .section { background: rgba(255, 255, 255, 0.95); border-radius: 18px; padding: clamp(24px, 5vw, 36px); box-shadow: 0 20px 36px rgba(15, 23, 42, 0.12); border: 1px solid rgba(31, 119, 180, 0.1); }
+        .section--outlined { border-width: 2px; border-color: rgba(198, 40, 40, 0.35); }
+        .section-title { font-size: clamp(1.6rem, 3vw, 1.9rem); font-weight: 600; margin-bottom: clamp(18px, 3vw, 26px); color: #c62828; border-bottom: 3px solid #1f77b4; padding-bottom: 10px; display: inline-block; }
+        .section-subtitle { font-size: clamp(1.06rem, 2.5vw, 1.28rem); font-weight: 600; color: #1f2937; }
+        .text-body { font-size: clamp(0.98rem, 2vw, 1.08rem); line-height: 1.65; color: #475569; }
+
+        .intro-wrapper { display: grid; gap: clamp(22px, 4vw, 34px); align-items: start; }
+        .summary-grid { display: grid; gap: clamp(18px, 4vw, 28px); grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+        .summary-card { display: grid; gap: 12px; background: rgba(255, 255, 255, 0.9); border-radius: 16px; padding: clamp(18px, 3.5vw, 26px); border: 1px solid rgba(148, 163, 184, 0.4); box-shadow: 0 14px 28px rgba(15, 23, 42, 0.12); }
+        .bulletless { list-style: none; display: grid; gap: 8px; }
+        .bulletless li { position: relative; padding-left: 16px; color: #475569; }
+        .bulletless li::before { content: '•'; position: absolute; left: 0; color: #c62828; }
+        .value-card { background: linear-gradient(135deg, rgba(198, 40, 40, 0.08) 0%, rgba(14, 165, 233, 0.08) 100%); border-radius: 14px; padding: clamp(16px, 3vw, 22px); }
+        .phase-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px; }
+        .phase-card { text-align: center; color: #fff; padding: 14px; border-radius: 12px; font-weight: 600; box-shadow: 0 12px 24px rgba(15, 23, 42, 0.18); }
+        .phase-card--foundation { background: linear-gradient(135deg, #1f77b4 0%, #3ba3f6 100%); }
+        .phase-card--acceleration { background: linear-gradient(135deg, #2ca02c 0%, #7dd87d 100%); }
+        .phase-card--consolidation { background: linear-gradient(135deg, #ff7f0e 0%, #ffb347 100%); }
+        .phase-card--culmination { background: linear-gradient(135deg, #d62728 0%, #ff6f61 100%); }
+
+        .dashboard-hero { display: grid; gap: 12px; text-align: center; }
+        .feature-image { width: min(100%, 380px); height: 280px; object-fit: cover; border-radius: 16px; margin: 0 auto; box-shadow: 0 16px 30px rgba(15, 23, 42, 0.2); }
+
+        .dashboard-container { display: grid; gap: clamp(24px, 5vw, 36px); max-width: 1400px; margin: 0 auto; }
+        .header { background: linear-gradient(135deg, #1f77b4 0%, #0ea5e9 100%); color: #fff; padding: clamp(28px, 6vw, 44px); border-radius: 20px; box-shadow: 0 24px 40px rgba(15, 23, 42, 0.16); display: grid; gap: 10px; text-align: center; }
+        .header h1 { font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; }
+        .header-subcopy { opacity: 0.85; }
+        .primary-button { display: inline-block; padding: 12px 30px; margin-top: 12px; background: #fff; color: #1f77b4; border-radius: 999px; font-weight: 600; text-decoration: none; box-shadow: 0 14px 28px rgba(15, 23, 42, 0.2); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .primary-button:hover { transform: translateY(-3px); box-shadow: 0 18px 34px rgba(15, 23, 42, 0.24); }
+
+        .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: clamp(18px, 4vw, 26px); }
+        .metric-card { background: rgba(255, 255, 255, 0.96); border-radius: 16px; padding: clamp(20px, 4vw, 26px); border-top: 4px solid #1f77b4; text-align: center; box-shadow: 0 18px 32px rgba(15, 23, 42, 0.12); display: grid; gap: 10px; }
+        .metric-card--success { border-color: #2ca02c; }
+        .metric-card--warning { border-color: #ff7f0e; }
+        .metric-card--danger { border-color: #d62728; }
+        .metric-label { text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; color: #475569; }
+        .metric-value { font-size: clamp(2rem, 4vw, 2.6rem); font-weight: 700; }
+
+        .attributes-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: clamp(18px, 4vw, 26px); }
+        .attribute-item { background: linear-gradient(135deg, rgba(31, 119, 180, 0.08), rgba(198, 40, 40, 0.08)); border-radius: 14px; padding: clamp(18px, 3.5vw, 24px); box-shadow: 0 16px 28px rgba(15, 23, 42, 0.12); display: grid; gap: 10px; }
+        .attribute-number { background: #1f77b4; color: #fff; width: 34px; height: 34px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: 600; margin-right: 8px; }
+
+        .action-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: clamp(20px, 4vw, 28px); }
+        .action-card { background: rgba(255, 255, 255, 0.94); border-radius: 16px; padding: clamp(20px, 4vw, 26px); border: 1px solid rgba(198, 40, 40, 0.3); box-shadow: 0 18px 32px rgba(15, 23, 42, 0.14); display: grid; gap: 14px; }
+        .action-title { font-size: clamp(1.16rem, 2.6vw, 1.35rem); color: #c62828; font-weight: 600; }
+        .action-list { list-style: none; display: grid; gap: 8px; color: #475569; }
+
+        .chart-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: clamp(20px, 4vw, 30px); }
+        .chart-card { background: rgba(255, 255, 255, 0.96); border-radius: 18px; padding: clamp(18px, 3.5vw, 26px); box-shadow: 0 20px 36px rgba(15, 23, 42, 0.14); display: grid; gap: 14px; }
+        .chart-title { font-size: clamp(1.1rem, 2.5vw, 1.4rem); font-weight: 600; color: #1f2937; text-transform: uppercase; letter-spacing: 1px; }
+        .chart-card .plotly-graph-div { min-height: 340px; }
+
+        .conclusion-banner { background: linear-gradient(135deg, #1f77b4 0%, #c62828 100%); color: #fff; border-radius: 18px; padding: clamp(22px, 5vw, 32px); text-align: center; box-shadow: 0 24px 42px rgba(15, 23, 42, 0.2); display: grid; gap: 8px; }
+        .page-footer { text-align: center; color: #475569; font-size: 0.95rem; }
+
+        .cv-container { max-width: 1100px; margin: 0 auto; display: grid; gap: clamp(24px, 5vw, 34px); }
+        .cv-header { text-align: center; background: rgba(255, 255, 255, 0.95); padding: clamp(26px, 5vw, 36px); border-radius: 18px; box-shadow: 0 20px 36px rgba(15, 23, 42, 0.14); }
+        .cv-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: clamp(18px, 4vw, 26px); }
+        .cv-card { background: rgba(255, 255, 255, 0.94); border-left: 5px solid #1f77b4; border-radius: 16px; padding: clamp(20px, 4vw, 26px); display: grid; gap: 12px; box-shadow: 0 18px 34px rgba(15, 23, 42, 0.12); }
+        .cv-section-title { font-size: clamp(1.2rem, 2.6vw, 1.5rem); font-weight: 600; color: #1f2937; }
+        .cv-list { list-style: none; display: grid; gap: 8px; color: #475569; }
+        .cv-list li { position: relative; padding-left: 16px; }
+        .cv-list li::before { content: '•'; position: absolute; left: 0; color: #c62828; }
+
+        .index-container { max-width: 960px; margin: 0 auto; background: rgba(255, 255, 255, 0.95); padding: clamp(28px, 6vw, 40px); border-radius: 18px; box-shadow: 0 24px 40px rgba(15, 23, 42, 0.16); display: grid; gap: clamp(18px, 4vw, 26px); text-align: center; }
+        .link-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: clamp(18px, 4vw, 26px); }
+        .link-card { display: grid; gap: 12px; background: rgba(255, 255, 255, 0.92); border-radius: 16px; padding: clamp(18px, 3.5vw, 26px); text-decoration: none; color: inherit; border: 1px solid rgba(31, 119, 180, 0.25); box-shadow: 0 18px 30px rgba(15, 23, 42, 0.14); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .link-card:hover { transform: translateY(-4px); box-shadow: 0 22px 36px rgba(15, 23, 42, 0.2); }
+
+        @media (min-width: 880px) {
+            .intro-wrapper { grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr); }
+        }
+    </style>
+    
+</head>
+<body>
+    <main class="index-container">
+        <h1>Proyecto Marca Personal</h1>
+        <p class="text-body">Selecciona un recurso para conocer la estrategia completa de posicionamiento profesional.</p>
+        <div class="link-grid">
+            <a class="link-card" href="dashboard_marca_personal.html" target="_blank" rel="noopener">
+                <h2>Dashboard Interactivo</h2>
+                <p>Visualizaciones con Plotly sobre cronograma, métricas proyectadas, estrategia y riesgos.</p>
+            </a>
+            <a class="link-card" href="cv.html" target="_blank" rel="noopener">
+                <h2>CV Profesional</h2>
+                <p>Perfil completo, experiencia, habilidades y logros de Miguel Lucero.</p>
+            </a>
+        </div>
+    </main>
+</body>
+</html>

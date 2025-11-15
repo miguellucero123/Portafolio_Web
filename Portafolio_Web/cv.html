@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Miguel Ignacio Lucero Gatica</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <!-- Fuentes del Dashboard para unificar -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* PALETA DE MARCA METGO (AZUL/ROJO) */
+        :root {
+            --metgo-dark: #003366;     /* Azul Oceánico Profundo */
+            --metgo-accent: #FF4500;   /* Rojo Fuego */
+            --metgo-light: #f8fafc;
+            --metgo-accent-light: #fff5f2; 
+        }
+
+        body { font-family: 'Inter', system-ui, sans-serif; color: var(--metgo-dark); background-color: var(--metgo-light); }
+        .navbar { padding: 1.2rem 0; background: #fff; box-shadow: 0 2px 15px rgba(0,0,0,0.04); }
+        .brand-logo { font-weight: 900; letter-spacing: -1px; color: var(--metgo-dark); }
+        .brand-highlight { color: var(--metgo-accent); }
+
+        /* Contenedor del CV */
+        .cv-container {
+            max-width: 900px;
+            margin: 100px auto 40px auto; /* Margen superior para navbar fija */
+            background: white;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        /* Header del CV */
+        .cv-header {
+            background-color: var(--metgo-dark);
+            color: white;
+            padding: 40px;
+            border-bottom: 5px solid var(--metgo-accent);
+            border-radius: 8px 8px 0 0;
+        }
+        .cv-name { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 2.5rem; }
+        .cv-title { font-size: 1.2rem; opacity: 0.9; color: #f1f5f9; }
+        .contact-link { color: white; text-decoration: none; opacity: 0.8; transition: 0.3s; }
+        .contact-link:hover { opacity: 1; text-decoration: underline; }
+        .contact-separator { opacity: 0.5; margin: 0 5px; }
+        .btn-primary { background-color: var(--metgo-accent); border: 0; }
+        .btn-outline { border-color: white; color: white; }
+        .btn-outline:hover { background-color: white; color: var(--metgo-dark); }
+
+        /* Cuerpo del CV */
+        .cv-body { padding: 40px; }
+        .cv-section-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--metgo-dark);
+            border-bottom: 2px solid var(--metgo-accent);
+            display: inline-block;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .experience-block { margin-bottom: 25px; }
+        .job-position { font-weight: 700; font-size: 1.1rem; color: var(--metgo-dark); }
+        .job-period { font-size: 0.9rem; color: var(--metgo-accent); font-weight: 600; }
+        .company-name { font-weight: 600; color: #334155; }
+        .experience-details { list-style-type: '✓'; padding-left: 20px; margin-top: 10px; }
+
+        .competency-group h4 { font-weight: 600; color: var(--metgo-dark); border-bottom: 1px solid #eee; padding-bottom: 5px; }
+        .competency-list li { margin-bottom: 5px; }
+
+        .education-block { margin-bottom: 15px; }
+        .degree { font-weight: 700; }
+        .institution { color: var(--metgo-dark); }
+        .education-period { font-size: 0.9rem; color: #6c757d; }
+
+        .project-block { background: var(--metgo-accent-light); padding: 15px; border-radius: 8px; border-left: 4px solid var(--metgo-accent); margin-bottom: 15px; }
+        .project-name { font-weight: 700; }
+        .text-link { color: var(--metgo-accent); font-weight: 600; }
+
+        /* Estilos de Impresión */
+        @media print {
+            body { background: white; }
+            .navbar, .cv-actions, .btn { display: none !important; }
+            .cv-container { margin: 0; box-shadow: none; border-radius: 0; }
+            .cv-header { background-color: #f1f5f9 !important; color: var(--metgo-dark) !important; border-bottom: 5px solid var(--metgo-accent) !important; }
+            .cv-name { color: var(--metgo-dark) !important; }
+            .cv-title, .contact-link { color: #334155 !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR (UNIFICADA) -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand brand-logo fs-3" href="index.html">Met<span class="brand-highlight">Go3d.</span></a>
+            <div class="ms-auto">
+                <a href="dashboard_marca_personal.html" class="btn btn-sm btn-outline-dark rounded-pill px-3">
+                    <i class="bi bi-arrow-left-circle me-1"></i> Volver al Dashboard
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CONTENIDO DEL CV (Actualizado) -->
+    <div class="cv-container">
+
+        <header class="cv-header">
+            <div class="container g-0">
+                <div class="row align-items-center">
+                    <div class="col-lg-8">
+                        <h1 class="cv-name">Miguel Ignacio Lucero Gatica</h1>
+                        <h2 class="cv-title">Meteorólogo | Analista de Datos & Desarrollador Front-End</h2>
+                        <div class="cv-contact mt-3 small">
+                            <i class="bi bi-geo-alt-fill"></i> Quilpué, Chile
+                            <span class="contact-separator">|</span>
+                            <i class="bi bi-phone-fill"></i> +56 9 9931 9162
+                        </div>
+                        <div class="cv-links mt-3 small">
+                            <a href="mailto:miguellucerogatica@gmail.com" class="contact-link me-3"><i class="bi bi-envelope-fill me-1"></i> miguellucerogatica@gmail.com</a>
+                            <a href="https://linkedin.com/in/metgo3d/" class="contact-link me-3"><i class="bi bi-linkedin me-1"></i> LinkedIn</a>
+                            <a href="https://github.com/miguellucero123" class="contact-link"><i class="bi bi-github me-1"></i> GitHub</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+                        <!-- BOTÓN ACTUALIZADO -->
+                        <a href="dashboard_marca_personal.html" class="btn btn-primary btn-sm">Ver Portfolio</a>
+                        <button onclick="window.print()" class="btn btn-outline btn-sm">Descargar PDF</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="cv-body">
+
+            <section class="cv-section">
+                <h3 class="cv-section-title">Resumen Ejecutivo</h3>
+                <p class="cv-text">
+                    Profesional con sólida formación científica y más de 8 años de experiencia operativa en 
+                    industrias de alta exigencia (Minería, Meteorología y contaminación atmosférica). Actualmente 
+                    cursando el último semestre de Técnico en Análisis de Datos y especializándome en Desarrollo Front-End.
+                </p>
+                <p class="cv-text">
+                    Poseo un perfil técnico híbrido que combina el dominio de la ciencia de datos (Python, SQL, Big Data) 
+                    con habilidades de desarrollo web y una probada capacidad de gestión en 
+                    terreno. Participante seleccionado en programa de emprendimiento global 
+                    (Santander Explorer). Cuenta con un portafolio activo de más de 15 repositorios 
+                    en GitHub, evidenciando aprendizaje continuo y capacidad de implementación 
+                    técnica.
+                </p>
+            </section>
+
+            <section class="cv-section">
+                <h3 class="cv-section-title">Dominio Técnico y Competencias</h3>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="competency-group">
+                            <h4>Lenguajes y Programación</h4>
+                            <ul class="competency-list text-muted">
+                                <li>Python (Certificación PCEP)</li>
+                                <li>SQL</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="competency-group">
+                            <h4>Ciencia de Datos</h4>
+                            <ul class="competency-list text-muted">
+                                <li>Pandas, NumPy, Scikit-learn</li>
+                                <li>Visualización (Matplotlib/Seaborn)</li>
+                                <li>Modelos Predictivos</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="competency-group">
+                            <h4>Desarrollo Web</h4>
+                            <ul class="competency-list text-muted">
+                                <li>HTML5, JavaScript (En formación)</li>
+                                <li>Control de versiones (Git/GitHub)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mt-3">
+                        <div class="competency-group">
+                            <h4>Software y Herramientas</h4>
+                            <ul class="competency-list text-muted">
+                                <li>Jupyter Notebooks, VS Code</li>
+                                <li>Vaisala Thunderstorm</li>
+                                <li>Software Meteorológico</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mt-3">
+                        <div class="competency-group">
+                            <h4>Gestión Operativa</h4>
+                            <ul class="competency-list text-muted">
+                                <li>Protocolos de seguridad en alta montaña</li>
+                                <li>Muestreo y QA/QC</li>
+                                <li>Reportabilidad técnica ejecutiva</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cv-section">
+                <h3 class="cv-section-title">Experiencia Profesional</h3>
+
+                <div class="experience-block">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <h4 class="job-position mb-0">Meteorólogo de Operaciones y Medio Ambiente</h4>
+                        <span class="job-period">Agosto 2022 – Abril 2024</span>
+                    </div>
+                    <h5 class="company-name">SGS CHILE LTDA. (Proyecto ENAMI Paipote)</h5>
+                    <ul class="experience-details text-muted">
+                        <li>Optimización Operativa: Elaboración de pronósticos meteorológicos de alta precisión para la programación estratégica de la producción en la fundición de cobre.</li>
+                        <li>Análisis de Datos Ambientales: Compilación y análisis estadístico mensual de concentraciones de ácido sulfúrico, variables críticas para el cumplimiento normativo.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-block">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <h4 class="job-position">Meteorólogo Especialista en Nivología</h4>
+                        <span class="job-period">Abril 2019 – Abril 2021</span>
+                    </div>
+                    <h5 class="company-name">ASESORÍA TÉCNICA PUCARA S.A.</h5>
+                    <ul class="experience-details text-muted">
+                        <li>Análisis de modelos meteorológicos y variables físicas para el control de riesgos de avalanchas en alta montaña.</li>
+                        <li>Elaboración diaria de informes técnicos fundamentales para toma de decisiones operativas.</li>
+                        <li>Administración de bases de datos climáticas históricas para estudios de retorno.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-block">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <h4 class="job-position">Operador Técnico de Meteorología</h4>
+                        <span class="job-period">Abril 2017 – Septiembre 2018</span>
+                    </div>
+                    <h5 class="company-name">COMPAÑÍA MINERA NEVADA S.A. (Proyecto Pascua Lama)</h5>
+                    <ul class="experience-details text-muted">
+                        <li>Responsable de la operatividad de la red de monitoreo meteorológico sobre los 4.000 msnm.</li>
+                        <li>Validación y limpieza de datos en tiempo real para asegurar la integridad de los registros.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-block">
+                    <div class="d-flex justify-content-between align-items-center flex-wrap">
+                        <h4 class="job-position">Consultor y Analista Técnico</h4>
+                        <span class="job-period">2012 – 2016</span>
+                    </div>
+                    <h5 class="company-name">EMPRESAS DE SERVICIOS (CESMEC S.A., CENMA, SERVICIO METEOROLÓGICO)</h5>
+                    <ul class="experience-details text-muted">
+                        <li>Trayectoria consolidada en diversas empresas del rubro Meteorológico y ambiental, desempeñando funciones de análisis, pronóstico y aseguramiento de calidad en terreno.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="cv-section">
+                <h3 class="cv-section-title">Formación en Tecnología y Datos</h3>
+
+                <div class="education-block">
+                    <h4 class="degree">Técnico de Nivel Superior en Análisis de Datos</h4>
+                    <span class="institution">Instituto Profesional AIEP</span>
+                    <span class="education-period"> | 2024 – Presente (En curso, último semestre)</span>
+                </div>
+                <div class="education-block">
+                    <h4 class="degree">Diplomado en Big Data & Ciencia de Datos</h4>
+                    <span class="institution">Universidad de los Andes</span>
+                    <span class="education-period"> | Mayo 2023 – Agosto 2024</span>
+                </div>
+                <div class="education-block">
+                    <h4 class="degree">Bootcamp Front-End Development (Beca Talento Digital)</h4>
+                    <span class="institution">SENCE</span>
+                    <span class="education-period"> | Octubre 2025 – Presente</span>
+                </div>
+                <div class="education-block">
+                    <h4 class="degree">PCEP™ – Certified Entry-Level Python Programmer</h4>
+                    <span class="institution">Python Institute</span>
+                    <span class="education-period"> | Expedición: Feb 2025</span>
+                </div>
+                <div class="education-block">
+                    <h4 class="degree">Curso Programación en Python para Procesamiento de Datos</h4>
+                    <span class="institution">Teleduc UC</span>
+                    <span class="education-period"> | 2024</span>
+                </div>
+            </section>
+
+            <section class="cv-section">
+                <h3 class="cv-section-title">Proyectos Destacados y Portafolio</h3>
+
+                <div class="project-block">
+                    <h4 class="project-name">Portafolio Web (MetGo3d)</h4>
+                    <p class="project-description">
+                        Sitio web profesional y portafolio de proyectos.
+                        <a href="https://www.metgo3d.com" class="text-link">www.metgo3d.com</a>
+                    </p>
+                </div>
+                <div class="project-block">
+                    <h4 class="project-name">Participación en pre-incubación Santander Explorer</h4>
+                    <p class="project-description">
+                        Diseño y prototipado de una aplicación web para la optimización y visualización de datos operativos (Proyecto en fase de validación).
+                    </p>
+                </div>
+                <div class="project-block">
+                    <h4 class="project-name">Repositorio GitHub</h4>
+                    <p class="project-description">
+                        Portafolio público con más de 15 proyectos que demuestran la evolución técnica.
+                        <a href="https://github.com/miguellucero123" class="text-link">github.com/miguellucero123</a>
+                    </p>
+                </div>
+            </section>
+
+            <section class="cv-section">
+                <h3 class="cv-section-title">Antecedentes Académicos de Base</h3>
+                <div class="education-block">
+                    <h4 class="degree">Título Profesional de Meteorólogo</h4>
+                    <span class="institution">Universidad de Valparaíso</span>
+                    <span class="education-period"> | 2021 – 2022</span>
+                </div>
+                <div class="education-block">
+                    <h4 class="degree">Diplomado en Cambio Climático</h4>
+                    <span class="institution">Universidad de Chile</span>
+                    <span class="education-period"> | 2019 – 2020</span>
+                </div>
+                <div class="education-block">
+                    <h4 class="degree">Licenciatura en Meteorología</h4>
+                    <span class="institution">Universidad de Valparaíso</span>
+                    <span class="education-period"> | 2005 – 2013</span>
+                </div>
+            </section>
+
+            <div class="cv-actions mt-4">
+                <a href="index.html" class="btn btn-outline">Volver al Inicio</a>
+                <a href="dashboard_marca_personal.html" class="btn btn-primary">Ver Dashboard de Marca Personal</a>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
