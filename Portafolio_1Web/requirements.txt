@@ -1,6 +1,0 @@
-# SQLite ya está incluido en Python, no requiere instalación adicional
-# Si en el futuro quieres usar PostgreSQL, instala: psycopg2-binary>=2.9.0
-
-# Email (incluido en Python, no requiere instalación adicional)
-# smtplib y email están en la biblioteca estándar de Python
-

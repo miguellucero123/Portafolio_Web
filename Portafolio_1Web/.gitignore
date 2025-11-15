@@ -1,0 +1,61 @@
+# Base de datos SQLite
+*.db
+*.sqlite
+*.sqlite3
+
+# Archivos Python (no necesarios para sitio web estático)
+*.py
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Archivos de configuración y scripts
+config_email.py
+config_email.py.example
+*.bat
+*.ps1
+requirements.txt
+
+# Jupyter Notebooks
+*.ipynb
+.ipynb_checkpoints/
+
+# Archivos SQL
+*.sql
+
+# Documentación técnica (mantener solo README.md y GITHUB_PAGES_SETUP.md)
+ACTIVAR_SIN_EMAILS.md
+CREAR_APP_PASSWORD.md
+INSTRUCCIONES_EMAIL.md
+INSTRUCCIONES_GITHUB.md
+README_DATABASE.md
+README_EMAIL.md
+SOLUCION_APP_PASSWORD.md
+SOLUCION_PUERTO.md
+SOLUCION_TEMPORAL_EMAIL.md
+
+# Entornos virtuales
+venv/
+env/
+ENV/
+.venv
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+
+# Archivos de configuración local
+.env
+.env.local
+
+# Coverage
+.early.coverage/
+
