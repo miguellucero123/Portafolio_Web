@@ -1,61 +1,40 @@
-# Base de datos SQLite
-*.db
-*.sqlite
-*.sqlite3
+# Ignorar todo en la raíz excepto .gitignore y Portafolio_1Web
+/*
+!/.gitignore
+!/.git
+!/Portafolio_1Web
 
-# Archivos Python (no necesarios para sitio web estático)
-*.py
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
+# Dentro de Portafolio_1Web, ignorar todo excepto archivos web
+Portafolio_1Web/*
+!Portafolio_1Web/.gitignore
+!Portafolio_1Web/*.html
+!Portafolio_1Web/*.md
+!Portafolio_1Web/*.JPG
+!Portafolio_1Web/assets/
+Portafolio_1Web/assets/*
+!Portafolio_1Web/assets/css/
+!Portafolio_1Web/assets/js/
+Portafolio_1Web/assets/css/*
+!Portafolio_1Web/assets/css/*.css
+Portafolio_1Web/assets/js/*
+!Portafolio_1Web/assets/js/*.js
 
-# Archivos de configuración y scripts
-config_email.py
-config_email.py.example
-*.bat
-*.ps1
-requirements.txt
-
-# Jupyter Notebooks
-*.ipynb
-.ipynb_checkpoints/
-
-# Archivos SQL
-*.sql
-
-# Documentación técnica (mantener solo README.md y GITHUB_PAGES_SETUP.md)
-ACTIVAR_SIN_EMAILS.md
-CREAR_APP_PASSWORD.md
-INSTRUCCIONES_EMAIL.md
-INSTRUCCIONES_GITHUB.md
-README_DATABASE.md
-README_EMAIL.md
-SOLUCION_APP_PASSWORD.md
-SOLUCION_PUERTO.md
-SOLUCION_TEMPORAL_EMAIL.md
-
-# Entornos virtuales
-venv/
-env/
-ENV/
-.venv
-
-# Archivos de sistema
-.DS_Store
-Thumbs.db
-*.swp
-*.swo
-*~
-
-# Logs
-*.log
-
-# Archivos de configuración local
-.env
-.env.local
-
-# Coverage
-.early.coverage/
-
+# Excluir específicamente archivos no deseados
+Portafolio_1Web/.venv/
+Portafolio_1Web/*.py
+Portafolio_1Web/*.db
+Portafolio_1Web/*.sql
+Portafolio_1Web/*.ipynb
+Portafolio_1Web/*.bat
+Portafolio_1Web/*.ps1
+Portafolio_1Web/requirements.txt
+Portafolio_1Web/config_email.py.example
+Portafolio_1Web/ACTIVAR_SIN_EMAILS.md
+Portafolio_1Web/CREAR_APP_PASSWORD.md
+Portafolio_1Web/INSTRUCCIONES_EMAIL.md
+Portafolio_1Web/INSTRUCCIONES_GITHUB.md
+Portafolio_1Web/README_DATABASE.md
+Portafolio_1Web/README_EMAIL.md
+Portafolio_1Web/SOLUCION_APP_PASSWORD.md
+Portafolio_1Web/SOLUCION_PUERTO.md
+Portafolio_1Web/SOLUCION_TEMPORAL_EMAIL.md
